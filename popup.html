@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anytype Clipper</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script src="lib/milestones.js"></script>
+  </head>
+  <body>
+    <!-- Auth View：未驗證時顯示 -->
+    <main id="auth-view" class="auth-view hidden">
+      <div class="auth-header">
+        <img src="icons/icon-48.png" alt="" class="auth-logo" />
+        <h1>Lazy to Anytype Clipper</h1>
+      </div>
+
+      <!-- Step: 連線中（含輪詢進度） -->
+      <div id="auth-step-connecting" class="auth-step">
+        <p class="auth-title" data-i18n="auth_connecting">正在連線 Anytype...</p>
+        <div class="auth-spinner"></div>
+        <p id="auth-connect-progress" class="auth-hint"></p>
+      </div>
+
+      <!-- Step: 輸入驗證碼 -->
+      <div id="auth-step-code" class="auth-step hidden">
+        <p class="auth-title" data-i18n="auth_enter_code">輸入驗證碼</p>
+        <p class="auth-subtitle" data-i18n="auth_code_subtitle">請查看 Anytype 桌面版顯示的 4 碼驗證碼</p>
+        <input id="challenge-code" type="text" inputmode="numeric"
+               maxlength="4" autocomplete="one-time-code"
+               data-i18n-placeholder="auth_code_placeholder"
+               placeholder="0000" class="auth-code-input" />
+        <button id="confirm-code-btn" type="button" class="auth-submit-btn" data-i18n="auth_confirm_btn">確認驗證</button>
+        <p id="auth-code-hint" class="auth-hint" data-i18n="auth_code_hint">驗證碼會顯示在 Anytype 桌面版的彈窗中</p>
+      </div>
+
+      <!-- Step: 連線失敗 -->
+      <div id="auth-step-error" class="auth-step hidden">
+        <p class="auth-title auth-error-title" data-i18n="auth_error_title">無法連線 Anytype</p>
+        <p class="auth-subtitle" data-i18n="auth_error_subtitle">請確認 Anytype 桌面版已開啟並運行中</p>
+        <button id="auth-retry-btn" type="button" class="auth-submit-btn" data-i18n="auth_retry_btn">重試連線</button>
+        <p class="auth-hint" data-i18n="auth_error_hint">Anytype 需在本機執行，擴充功能才能運作</p>
+      </div>
+
+      <!-- Step: 驗證成功（短暫顯示後自動切到 clipper） -->
+      <div id="auth-step-success" class="auth-step hidden">
+        <div class="auth-success-icon">✓</div>
+        <p class="auth-title" data-i18n="auth_success">驗證成功</p>
+      </div>
+    </main>
+
+    <!-- Clipper View：已驗證後顯示 -->
+    <main class="app hidden" id="clipper-main">
+      <h1>Lazy to Anytype Clipper</h1>
+      <label for="title-input" data-i18n="label_title">Title</label>
+      <input id="title-input" type="text" />
+
+      <label for="space-select" data-i18n="label_space">Space</label>
+      <select id="space-select"></select>
+
+      <label for="type-select" data-i18n="label_save_as">Save As</label>
+      <select id="type-select"></select>
+      <div id="type-icon-hint" class="type-icon-hint"></div>
+
+      <label for="tag-input" data-i18n="label_tag">Tag</label>
+      <div id="tag-combobox" class="tag-combobox">
+        <div id="selected-tags" class="chips"></div>
+        <input id="tag-input" type="text" data-i18n-placeholder="tag_input_placeholder" placeholder="點擊選擇或輸入新增 Tag" autocomplete="off" />
+        <div id="tag-dropdown" class="tag-dropdown hidden"></div>
+      </div>
+      <section id="tag-editor-panel" class="tag-editor-panel hidden">
+        <label for="tag-edit-name" data-i18n="tag_edit_label">編輯 Tag</label>
+        <input id="tag-edit-name" type="text" />
+        <div id="tag-edit-colors" class="tag-color-grid"></div>
+        <div class="row">
+          <button id="tag-edit-save" type="button" data-i18n="tag_edit_save_btn">儲存 Tag</button>
+          <button id="tag-edit-cancel" class="secondary" type="button" data-i18n="tag_edit_cancel_btn">取消</button>
+        </div>
+      </section>
+
+      <section id="preview-card" class="preview-card">
+        <div class="preview-title" data-i18n="preview_title">儲存預覽</div>
+        <div class="preview-grid">
+          <div class="preview-item">
+            <span data-i18n="preview_source">來源</span>
+            <strong id="preview-domain">-</strong>
+          </div>
+          <div class="preview-item">
+            <span data-i18n="preview_word_count">頁面文字</span>
+            <strong id="preview-word-count">-</strong>
+          </div>
+          <div class="preview-item">
+            <span data-i18n="preview_embed_count">媒體連結</span>
+            <strong id="preview-embed-count">0</strong>
+          </div>
+        </div>
+        <div id="preview-embeds" class="preview-embeds"></div>
+      </section>
+
+      <div class="hint" data-i18n="hint_body_always_saved">正文內容固定會一起儲存（不顯示 Add page content）</div>
+
+      <label class="quick-save-label">
+        <input type="checkbox" id="quick-save-toggle" />
+        <span data-i18n="label_quick_save">快速收藏（僅儲存連結，不擷取內文）</span>
+      </label>
+
+      <button id="clip-btn" data-i18n="btn_save">Save</button>
+      <section id="level-bar" class="level-bar hidden">
+        <div class="level-bar-header">
+          <span id="level-current" class="level-current"></span>
+          <span class="level-arrow">&rarr;</span>
+          <span id="level-next" class="level-next"></span>
+        </div>
+        <div class="level-progress-track">
+          <div id="level-progress-fill" class="level-progress-fill"></div>
+        </div>
+        <div id="level-progress-text" class="level-progress-text"></div>
+      </section>
+      <section id="result-card" class="result-card hidden">
+        <p id="result-text"></p>
+        <div class="row">
+          <button id="open-anytype-btn" class="secondary hidden" type="button" data-i18n="btn_open_anytype">Open in Anytype</button>
+          <button id="copy-object-id-btn" class="secondary hidden" type="button" data-i18n="btn_copy_id">Copy Object ID</button>
+        </div>
+      </section>
+      <p id="status" class="status" data-i18n="status_ready">準備就緒</p>
+    </main>
+
+    <div id="duplicate-modal" class="modal hidden">
+      <div class="modal-panel">
+        <h3 data-i18n="dup_detected_title">偵測到重複網址</h3>
+        <p data-i18n="dup_detected_desc">同網址已有內容，請選擇要更新或另存。</p>
+        <div id="duplicate-list" class="duplicate-list"></div>
+        <div class="row">
+          <button id="dup-update-btn" type="button" data-i18n="dup_update_btn">更新既有</button>
+          <button id="dup-create-btn" class="secondary" type="button" data-i18n="dup_create_btn">另存新物件</button>
+          <button id="dup-cancel-btn" class="secondary" type="button" data-i18n="dup_cancel_btn">取消</button>
+        </div>
+      </div>
+    </div>
+    <script src="lib/i18n-helper.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

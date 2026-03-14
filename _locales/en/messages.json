@@ -1,0 +1,464 @@
+{
+  "ext_name": {
+    "message": "Lazy to Anytype Clipper",
+    "description": "Extension name"
+  },
+  "ext_description": {
+    "message": "Clip web pages directly to your local Anytype app. No Python service required — just open Anytype and click the extension.",
+    "description": "Extension description"
+  },
+  "ext_action_title": {
+    "message": "Clip to Anytype",
+    "description": "Browser action tooltip"
+  },
+
+  "auth_connecting": {
+    "message": "Connecting to Anytype...",
+    "description": "Auth step: connecting"
+  },
+  "auth_enter_code": {
+    "message": "Enter Verification Code",
+    "description": "Auth step: enter code title"
+  },
+  "auth_code_subtitle": {
+    "message": "Check the 4-digit code shown in the Anytype desktop app",
+    "description": "Auth step: code subtitle"
+  },
+  "auth_code_placeholder": {
+    "message": "0000",
+    "description": "Auth code input placeholder"
+  },
+  "auth_confirm_btn": {
+    "message": "Confirm",
+    "description": "Auth confirm button"
+  },
+  "auth_code_hint": {
+    "message": "The code appears in a dialog in the Anytype desktop app",
+    "description": "Auth code hint text"
+  },
+  "auth_error_title": {
+    "message": "Cannot Connect to Anytype",
+    "description": "Auth error title"
+  },
+  "auth_error_subtitle": {
+    "message": "Make sure Anytype desktop is open and running",
+    "description": "Auth error subtitle"
+  },
+  "auth_retry_btn": {
+    "message": "Retry Connection",
+    "description": "Auth retry button"
+  },
+  "auth_error_hint": {
+    "message": "Anytype must be running locally for this extension to work",
+    "description": "Auth error hint"
+  },
+  "auth_success": {
+    "message": "Verified",
+    "description": "Auth success title"
+  },
+  "auth_code_wrong": {
+    "message": "Wrong code. Please check Anytype desktop again.",
+    "description": "Wrong verification code hint"
+  },
+
+  "label_title": {
+    "message": "Title",
+    "description": "Title field label"
+  },
+  "label_space": {
+    "message": "Space",
+    "description": "Space field label"
+  },
+  "label_save_as": {
+    "message": "Save As",
+    "description": "Save As field label"
+  },
+  "label_tag": {
+    "message": "Tag",
+    "description": "Tag field label"
+  },
+
+  "tag_input_placeholder": {
+    "message": "Click to select or type to add Tag",
+    "description": "Tag input placeholder"
+  },
+  "tag_edit_label": {
+    "message": "Edit Tag",
+    "description": "Tag editor panel label"
+  },
+  "tag_edit_save_btn": {
+    "message": "Save Tag",
+    "description": "Tag editor save button"
+  },
+  "tag_edit_cancel_btn": {
+    "message": "Cancel",
+    "description": "Tag editor cancel button"
+  },
+  "tag_edit_title": {
+    "message": "Edit tag name and color",
+    "description": "Tag edit button tooltip"
+  },
+  "tag_create_item": {
+    "message": "Add \"$name$\"",
+    "description": "Dropdown item to create new tag",
+    "placeholders": {
+      "name": { "content": "$1" }
+    }
+  },
+  "tag_create_footer": {
+    "message": "✚ Type to add Tag",
+    "description": "Dropdown footer hint"
+  },
+  "tag_empty": {
+    "message": "No tags available",
+    "description": "Empty dropdown message"
+  },
+  "tag_edit_btn": {
+    "message": "Edit",
+    "description": "Edit button in tag dropdown"
+  },
+
+  "preview_title": {
+    "message": "Save Preview",
+    "description": "Preview card title"
+  },
+  "preview_source": {
+    "message": "Source",
+    "description": "Preview source label"
+  },
+  "preview_word_count": {
+    "message": "Word Count",
+    "description": "Preview word count label"
+  },
+  "preview_embed_count": {
+    "message": "Media Links",
+    "description": "Preview media count label"
+  },
+  "hint_body_always_saved": {
+    "message": "Page content is always saved (no 'Add page content' option)",
+    "description": "Hint below preview card"
+  },
+
+  "btn_save": {
+    "message": "Save",
+    "description": "Main save button"
+  },
+  "btn_open_anytype": {
+    "message": "Open in Anytype",
+    "description": "Open result in Anytype button"
+  },
+  "btn_copy_id": {
+    "message": "Copy Object ID",
+    "description": "Copy object ID button"
+  },
+
+  "dup_detected_title": {
+    "message": "Duplicate URL Detected",
+    "description": "Duplicate modal title"
+  },
+  "dup_detected_desc": {
+    "message": "This URL already has content. Choose to update or create new.",
+    "description": "Duplicate modal description"
+  },
+  "dup_update_btn": {
+    "message": "Update Existing",
+    "description": "Duplicate modal update button"
+  },
+  "dup_create_btn": {
+    "message": "Save as New",
+    "description": "Duplicate modal create button"
+  },
+  "dup_cancel_btn": {
+    "message": "Cancel",
+    "description": "Duplicate modal cancel button"
+  },
+
+  "status_ready": {
+    "message": "Ready",
+    "description": "Ready status"
+  },
+  "status_loading_options": {
+    "message": "Loading Space / Save As / Tags...",
+    "description": "Loading options status"
+  },
+  "status_loading": {
+    "message": "Loading...",
+    "description": "Generic loading status"
+  },
+  "status_clipping": {
+    "message": "Clipping...",
+    "description": "Clipping in progress status"
+  },
+  "status_cancelled": {
+    "message": "Save cancelled",
+    "description": "Cancelled status"
+  },
+  "status_done": {
+    "message": "Done: $objectId$\nWords $wordCount$ / Media $mediaCount$",
+    "description": "Clip completed status",
+    "placeholders": {
+      "objectId": { "content": "$1" },
+      "wordCount": { "content": "$2" },
+      "mediaCount": { "content": "$3" }
+    }
+  },
+  "status_warnings": {
+    "message": "\nWarnings: $warnings$",
+    "description": "Warnings suffix in status",
+    "placeholders": {
+      "warnings": { "content": "$1" }
+    }
+  },
+  "status_dedup": {
+    "message": "\nDedup hit: $reason$",
+    "description": "Dedup suffix in status",
+    "placeholders": {
+      "reason": { "content": "$1" }
+    }
+  },
+  "status_tag_updated": {
+    "message": "Tag updated",
+    "description": "Tag saved status"
+  },
+  "status_copied_id": {
+    "message": "Copied object ID: $objectId$",
+    "description": "Copied object ID status",
+    "placeholders": {
+      "objectId": { "content": "$1" }
+    }
+  },
+  "status_connected": {
+    "message": "Connected",
+    "description": "Connection status badge: connected"
+  },
+  "status_disconnected": {
+    "message": "Disconnected",
+    "description": "Connection status badge: disconnected"
+  },
+  "status_testing": {
+    "message": "Testing...",
+    "description": "Testing connection status"
+  },
+  "status_api_ok": {
+    "message": "Anytype local API is working",
+    "description": "API ok status"
+  },
+  "status_api_key_cleared": {
+    "message": "API Key cleared",
+    "description": "API key cleared status"
+  },
+
+  "result_created": {
+    "message": "New object created",
+    "description": "Result: object created"
+  },
+  "result_updated": {
+    "message": "Existing object updated",
+    "description": "Result: object updated"
+  },
+
+  "type_icon_official": {
+    "message": "Icon: $glyph$ (official)",
+    "description": "Type icon hint: emoji",
+    "placeholders": {
+      "glyph": { "content": "$1" }
+    }
+  },
+  "type_icon_named_color": {
+    "message": "Icon: $glyph$ $name$ / $color$ (official)",
+    "description": "Type icon hint: name + color",
+    "placeholders": {
+      "glyph": { "content": "$1" },
+      "name": { "content": "$2" },
+      "color": { "content": "$3" }
+    }
+  },
+  "type_icon_named": {
+    "message": "Icon: $glyph$ $name$ (official)",
+    "description": "Type icon hint: name only",
+    "placeholders": {
+      "glyph": { "content": "$1" },
+      "name": { "content": "$2" }
+    }
+  },
+  "type_icon_default": {
+    "message": "Icon: $glyph$ Default",
+    "description": "Type icon hint: default",
+    "placeholders": {
+      "glyph": { "content": "$1" }
+    }
+  },
+
+  "error_no_runtime": {
+    "message": "Extension runtime not detected. Please open from the browser extension popup.",
+    "description": "No runtime error"
+  },
+  "error_options_load_failed": {
+    "message": "Failed to load options",
+    "description": "Options load failure fallback"
+  },
+  "error_connect_anytype": {
+    "message": "Cannot connect to Anytype. Make sure Anytype desktop is open.",
+    "description": "Connection error in status"
+  },
+  "error_options_failed": {
+    "message": "Failed to load options: $msg$",
+    "description": "Options load error with detail",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "error_clip_failed": {
+    "message": "Failed: $msg$",
+    "description": "Clip error status",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "error_dup_check_failed": {
+    "message": "Duplicate check failed",
+    "description": "Duplicate check error"
+  },
+  "error_tag_name_empty": {
+    "message": "Tag name cannot be empty",
+    "description": "Tag name empty error"
+  },
+  "error_tag_update_failed": {
+    "message": "Tag update failed: $msg$",
+    "description": "Tag update error",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "error_runtime_unavailable": {
+    "message": "Extension runtime unavailable, please reload the extension and try again.",
+    "description": "Runtime unavailable error"
+  },
+  "error_page_not_clippable": {
+    "message": "Current page cannot be clipped.",
+    "description": "Page not clippable error"
+  },
+  "error_page_restricted": {
+    "message": "This page is browser-protected and cannot be clipped.",
+    "description": "Page restricted error"
+  },
+  "error_extract_failed": {
+    "message": "Cannot read page content.",
+    "description": "Content extraction failed"
+  },
+  "error_content_empty": {
+    "message": "Extracted content is empty",
+    "description": "Empty content error"
+  },
+  "error_not_authenticated": {
+    "message": "Not yet authenticated. Please complete 4-digit verification in the Popup.",
+    "description": "Not authenticated error"
+  },
+  "error_no_challenge_id": {
+    "message": "Anytype did not return challenge_id",
+    "description": "Missing challenge ID error"
+  },
+  "error_challenge_empty": {
+    "message": "challenge_id and code cannot be empty",
+    "description": "Challenge params empty error"
+  },
+  "error_no_api_key": {
+    "message": "Anytype did not return api_key",
+    "description": "Missing API key error"
+  },
+  "error_no_space_id": {
+    "message": "Cannot get Anytype space_id",
+    "description": "No space ID error"
+  },
+  "error_create_object_failed": {
+    "message": "Failed to create object, response: $resp$",
+    "description": "Object creation error",
+    "placeholders": {
+      "resp": { "content": "$1" }
+    }
+  },
+  "error_no_spaces": {
+    "message": "No available Anytype space",
+    "description": "No spaces error"
+  },
+  "error_missing_new_name": {
+    "message": "Missing new_name",
+    "description": "Tag update missing name error"
+  },
+  "error_http_status": {
+    "message": "Connection error: HTTP $status$",
+    "description": "HTTP error status",
+    "placeholders": {
+      "status": { "content": "$1" }
+    }
+  },
+  "error_extension_api_unavailable": {
+    "message": "Extension API unavailable",
+    "description": "Extension API error"
+  },
+  "error_challenge_failed": {
+    "message": "Challenge request failed",
+    "description": "Auth challenge failed error"
+  },
+  "error_auth_failed": {
+    "message": "Authentication failed",
+    "description": "Auth verification failed error"
+  },
+  "error_unknown": {
+    "message": "Unknown error",
+    "description": "Fallback unknown error"
+  },
+
+  "options_title": {
+    "message": "Anytype Web Clipper — Settings",
+    "description": "Options page title"
+  },
+  "options_subtitle": {
+    "message": "Directly connect to the Anytype local API. No Python middleware required.",
+    "description": "Options page subtitle"
+  },
+  "options_connection_section": {
+    "message": "Anytype Connection",
+    "description": "Options connection section heading"
+  },
+  "btn_test_connection": {
+    "message": "Test Connection",
+    "description": "Test connection button"
+  },
+  "options_api_hint": {
+    "message": "Anytype local API: http://127.0.0.1:31009",
+    "description": "Options API URL hint"
+  },
+  "options_api_key_section": {
+    "message": "API Key Management",
+    "description": "Options API key section heading"
+  },
+  "btn_clear_api_key": {
+    "message": "Clear API Key (Re-authenticate)",
+    "description": "Clear API key button"
+  },
+  "options_clear_hint": {
+    "message": "After clearing, the next time you open the Popup, you will go through the 4-digit verification again.",
+    "description": "Clear API key hint"
+  },
+  "options_api_key_saved": {
+    "message": "API Key saved (last 4: ...$last4$)",
+    "description": "API key saved status",
+    "placeholders": {
+      "last4": { "content": "$1" }
+    }
+  },
+  "options_api_key_missing": {
+    "message": "API Key not set. Please open the Popup to authenticate.",
+    "description": "API key missing status"
+  },
+  "options_api_key_cleared": {
+    "message": "API Key cleared. Please open the Popup to re-authenticate.",
+    "description": "API key cleared in options"
+  },
+
+  "options_stats_section": {
+    "message": "Usage Stats",
+    "description": "Options stats section heading"
+  }
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lazy to Anytype Clipper — Settings</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script src="lib/milestones.js"></script>
+    <style>
+      body { min-width: 400px; }
+      .options-section { margin-bottom: 16px; }
+      .options-section h2 { font-size: 13px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+      .field-row { display: flex; gap: 8px; align-items: center; }
+      .hint-text { font-size: 11px; color: #64748b; margin-top: 4px; }
+      .status-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+      .status-badge.connected { background: rgba(34,197,94,0.18); color: #86efac; border: 1px solid #15803d; }
+      .status-badge.disconnected { background: rgba(239,68,68,0.18); color: #fca5a5; border: 1px solid #b91c1c; }
+      .stats-summary { display: flex; gap: 24px; margin-bottom: 12px; }
+      .stats-summary .stat-item { display: flex; flex-direction: column; gap: 2px; }
+      .stats-summary .stat-value { font-size: 22px; font-weight: 700; color: #e2e8f0; }
+      .stats-summary .stat-label { font-size: 11px; color: #64748b; }
+      .milestone-tiers { max-height: 420px; overflow-y: auto; display: grid; gap: 14px; padding-right: 4px; }
+      .tier-group { display: grid; gap: 6px; }
+      .tier-header { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #94a3b8; }
+      .tier-emoji { font-size: 16px; }
+      .tier-name { font-weight: 600; color: #cbd5e1; }
+      .tier-range { margin-left: auto; font-size: 10px; color: #475569; }
+      .tier-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+      .milestone-card { border: 1px solid #334155; border-radius: 8px; padding: 6px 4px; text-align: center; opacity: 0.35; }
+      .milestone-card.achieved { border-color: #22c55e; opacity: 1; background: rgba(34,197,94,0.08); }
+      .milestone-card.current { border-color: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.3); opacity: 1; background: rgba(34,197,94,0.12); }
+      .milestone-card .mc-level { font-size: 9px; color: #64748b; font-weight: 600; }
+      .milestone-card .mc-name { font-size: 9px; color: #94a3b8; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .milestone-card .mc-threshold { font-size: 9px; color: #64748b; }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <h1>Lazy to Anytype Clipper</h1>
+      <p style="color:#94a3b8;font-size:12px;margin-bottom:16px;" data-i18n="options_subtitle">直連 Anytype 本地 API，無需 Python 中間服務。</p>
+
+      <div class="options-section">
+        <h2 data-i18n="options_connection_section">Anytype 連線狀態</h2>
+        <div class="field-row" style="margin-bottom:8px;">
+          <span id="connection-badge" class="status-badge disconnected" data-i18n="status_disconnected">未連線</span>
+          <button id="test-btn" type="button" class="secondary" data-i18n="btn_test_connection">測試連線</button>
+        </div>
+        <p class="hint-text" data-i18n="options_api_hint">Anytype 本地 API：http://127.0.0.1:31009</p>
+      </div>
+
+      <div class="options-section">
+        <h2 data-i18n="options_api_key_section">API Key 管理</h2>
+        <p id="apikey-status" class="hint-text" style="margin-bottom:8px;" data-i18n="status_loading">讀取中...</p>
+        <div class="field-row">
+          <button id="clear-btn" type="button" class="secondary" data-i18n="btn_clear_api_key">清除 API Key（重新驗證）</button>
+        </div>
+        <p class="hint-text" data-i18n="options_clear_hint">清除後，下次開啟 Popup 將重新進行 4 碼驗證流程。</p>
+      </div>
+
+      <div class="options-section">
+        <h2 data-i18n="options_stats_section">使用統計</h2>
+        <div id="stats-summary" class="stats-summary">
+          <div class="stat-item">
+            <span id="stat-total" class="stat-value">-</span>
+            <span class="stat-label">總收藏數</span>
+          </div>
+          <div class="stat-item">
+            <span id="stat-today" class="stat-value">-</span>
+            <span class="stat-label">今日收藏</span>
+          </div>
+        </div>
+        <div id="milestone-tiers" class="milestone-tiers"></div>
+      </div>
+
+      <p id="status" class="status"></p>
+    </main>
+    <script src="lib/i18n-helper.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

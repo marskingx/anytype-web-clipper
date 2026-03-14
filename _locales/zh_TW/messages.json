@@ -1,0 +1,464 @@
+{
+  "ext_name": {
+    "message": "Lazy to Anytype Clipper",
+    "description": "Extension name"
+  },
+  "ext_description": {
+    "message": "直接將網頁剪輯到本機 Anytype，無需 Python 中間服務 — 開啟 Anytype 後直接點擊擴充功能即可。",
+    "description": "Extension description"
+  },
+  "ext_action_title": {
+    "message": "存入 Anytype",
+    "description": "Browser action tooltip"
+  },
+
+  "auth_connecting": {
+    "message": "正在連線 Anytype...",
+    "description": "Auth step: connecting"
+  },
+  "auth_enter_code": {
+    "message": "輸入驗證碼",
+    "description": "Auth step: enter code title"
+  },
+  "auth_code_subtitle": {
+    "message": "請查看 Anytype 桌面版顯示的 4 碼驗證碼",
+    "description": "Auth step: code subtitle"
+  },
+  "auth_code_placeholder": {
+    "message": "0000",
+    "description": "Auth code input placeholder"
+  },
+  "auth_confirm_btn": {
+    "message": "確認驗證",
+    "description": "Auth confirm button"
+  },
+  "auth_code_hint": {
+    "message": "驗證碼會顯示在 Anytype 桌面版的彈窗中",
+    "description": "Auth code hint text"
+  },
+  "auth_error_title": {
+    "message": "無法連線 Anytype",
+    "description": "Auth error title"
+  },
+  "auth_error_subtitle": {
+    "message": "請確認 Anytype 桌面版已開啟並運行中",
+    "description": "Auth error subtitle"
+  },
+  "auth_retry_btn": {
+    "message": "重試連線",
+    "description": "Auth retry button"
+  },
+  "auth_error_hint": {
+    "message": "Anytype 需在本機執行，擴充功能才能運作",
+    "description": "Auth error hint"
+  },
+  "auth_success": {
+    "message": "驗證成功",
+    "description": "Auth success title"
+  },
+  "auth_code_wrong": {
+    "message": "驗證碼錯誤，請重新查看 Anytype 桌面版",
+    "description": "Wrong verification code hint"
+  },
+
+  "label_title": {
+    "message": "標題",
+    "description": "Title field label"
+  },
+  "label_space": {
+    "message": "Space",
+    "description": "Space field label"
+  },
+  "label_save_as": {
+    "message": "儲存為",
+    "description": "Save As field label"
+  },
+  "label_tag": {
+    "message": "Tag",
+    "description": "Tag field label"
+  },
+
+  "tag_input_placeholder": {
+    "message": "點擊選擇或輸入新增 Tag",
+    "description": "Tag input placeholder"
+  },
+  "tag_edit_label": {
+    "message": "編輯 Tag",
+    "description": "Tag editor panel label"
+  },
+  "tag_edit_save_btn": {
+    "message": "儲存 Tag",
+    "description": "Tag editor save button"
+  },
+  "tag_edit_cancel_btn": {
+    "message": "取消",
+    "description": "Tag editor cancel button"
+  },
+  "tag_edit_title": {
+    "message": "編輯 Tag 名稱與顏色",
+    "description": "Tag edit button tooltip"
+  },
+  "tag_create_item": {
+    "message": "新增「$name$」",
+    "description": "Dropdown item to create new tag",
+    "placeholders": {
+      "name": { "content": "$1" }
+    }
+  },
+  "tag_create_footer": {
+    "message": "✚ 輸入以新增 Tag",
+    "description": "Dropdown footer hint"
+  },
+  "tag_empty": {
+    "message": "沒有可選 Tag",
+    "description": "Empty dropdown message"
+  },
+  "tag_edit_btn": {
+    "message": "編輯",
+    "description": "Edit button in tag dropdown"
+  },
+
+  "preview_title": {
+    "message": "儲存預覽",
+    "description": "Preview card title"
+  },
+  "preview_source": {
+    "message": "來源",
+    "description": "Preview source label"
+  },
+  "preview_word_count": {
+    "message": "頁面文字",
+    "description": "Preview word count label"
+  },
+  "preview_embed_count": {
+    "message": "媒體連結",
+    "description": "Preview media count label"
+  },
+  "hint_body_always_saved": {
+    "message": "正文內容固定會一起儲存（不顯示 Add page content）",
+    "description": "Hint below preview card"
+  },
+
+  "btn_save": {
+    "message": "儲存",
+    "description": "Main save button"
+  },
+  "btn_open_anytype": {
+    "message": "在 Anytype 開啟",
+    "description": "Open result in Anytype button"
+  },
+  "btn_copy_id": {
+    "message": "複製物件 ID",
+    "description": "Copy object ID button"
+  },
+
+  "dup_detected_title": {
+    "message": "偵測到重複網址",
+    "description": "Duplicate modal title"
+  },
+  "dup_detected_desc": {
+    "message": "同網址已有內容，請選擇要更新或另存。",
+    "description": "Duplicate modal description"
+  },
+  "dup_update_btn": {
+    "message": "更新既有",
+    "description": "Duplicate modal update button"
+  },
+  "dup_create_btn": {
+    "message": "另存新物件",
+    "description": "Duplicate modal create button"
+  },
+  "dup_cancel_btn": {
+    "message": "取消",
+    "description": "Duplicate modal cancel button"
+  },
+
+  "status_ready": {
+    "message": "準備就緒",
+    "description": "Ready status"
+  },
+  "status_loading_options": {
+    "message": "讀取 Space / Save As / Tags...",
+    "description": "Loading options status"
+  },
+  "status_loading": {
+    "message": "讀取中...",
+    "description": "Generic loading status"
+  },
+  "status_clipping": {
+    "message": "截取中...",
+    "description": "Clipping in progress status"
+  },
+  "status_cancelled": {
+    "message": "已取消儲存",
+    "description": "Cancelled status"
+  },
+  "status_done": {
+    "message": "完成：$objectId$\n字數 $wordCount$ / 媒體 $mediaCount$",
+    "description": "Clip completed status",
+    "placeholders": {
+      "objectId": { "content": "$1" },
+      "wordCount": { "content": "$2" },
+      "mediaCount": { "content": "$3" }
+    }
+  },
+  "status_warnings": {
+    "message": "\n警告: $warnings$",
+    "description": "Warnings suffix in status",
+    "placeholders": {
+      "warnings": { "content": "$1" }
+    }
+  },
+  "status_dedup": {
+    "message": "\n防重命中: $reason$",
+    "description": "Dedup suffix in status",
+    "placeholders": {
+      "reason": { "content": "$1" }
+    }
+  },
+  "status_tag_updated": {
+    "message": "Tag 已更新",
+    "description": "Tag saved status"
+  },
+  "status_copied_id": {
+    "message": "已複製 object id：$objectId$",
+    "description": "Copied object ID status",
+    "placeholders": {
+      "objectId": { "content": "$1" }
+    }
+  },
+  "status_connected": {
+    "message": "已連線",
+    "description": "Connection status badge: connected"
+  },
+  "status_disconnected": {
+    "message": "未連線",
+    "description": "Connection status badge: disconnected"
+  },
+  "status_testing": {
+    "message": "測試中...",
+    "description": "Testing connection status"
+  },
+  "status_api_ok": {
+    "message": "Anytype 本地 API 運作正常",
+    "description": "API ok status"
+  },
+  "status_api_key_cleared": {
+    "message": "已清除 API Key",
+    "description": "API key cleared status"
+  },
+
+  "result_created": {
+    "message": "已建立新物件",
+    "description": "Result: object created"
+  },
+  "result_updated": {
+    "message": "已更新既有物件",
+    "description": "Result: object updated"
+  },
+
+  "type_icon_official": {
+    "message": "圖示：$glyph$（官方 icon）",
+    "description": "Type icon hint: emoji",
+    "placeholders": {
+      "glyph": { "content": "$1" }
+    }
+  },
+  "type_icon_named_color": {
+    "message": "圖示：$glyph$ $name$ / $color$（官方 icon）",
+    "description": "Type icon hint: name + color",
+    "placeholders": {
+      "glyph": { "content": "$1" },
+      "name": { "content": "$2" },
+      "color": { "content": "$3" }
+    }
+  },
+  "type_icon_named": {
+    "message": "圖示：$glyph$ $name$（官方 icon）",
+    "description": "Type icon hint: name only",
+    "placeholders": {
+      "glyph": { "content": "$1" },
+      "name": { "content": "$2" }
+    }
+  },
+  "type_icon_default": {
+    "message": "圖示：$glyph$ 預設",
+    "description": "Type icon hint: default",
+    "placeholders": {
+      "glyph": { "content": "$1" }
+    }
+  },
+
+  "error_no_runtime": {
+    "message": "偵測不到 extension runtime，請從瀏覽器擴充功能彈窗開啟。",
+    "description": "No runtime error"
+  },
+  "error_options_load_failed": {
+    "message": "讀取選項失敗",
+    "description": "Options load failure fallback"
+  },
+  "error_connect_anytype": {
+    "message": "無法連線 Anytype。請確認 Anytype 桌面版已開啟。",
+    "description": "Connection error in status"
+  },
+  "error_options_failed": {
+    "message": "選項載入失敗：$msg$",
+    "description": "Options load error with detail",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "error_clip_failed": {
+    "message": "失敗：$msg$",
+    "description": "Clip error status",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "error_dup_check_failed": {
+    "message": "重複檢查失敗",
+    "description": "Duplicate check error"
+  },
+  "error_tag_name_empty": {
+    "message": "Tag 名稱不可空白",
+    "description": "Tag name empty error"
+  },
+  "error_tag_update_failed": {
+    "message": "Tag 更新失敗：$msg$",
+    "description": "Tag update error",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "error_runtime_unavailable": {
+    "message": "extension runtime 不可用，請重新載入擴充功能後再試。",
+    "description": "Runtime unavailable error"
+  },
+  "error_page_not_clippable": {
+    "message": "目前頁面不是可擷取的網頁。",
+    "description": "Page not clippable error"
+  },
+  "error_page_restricted": {
+    "message": "此頁面受瀏覽器保護，無法擷取。",
+    "description": "Page restricted error"
+  },
+  "error_extract_failed": {
+    "message": "無法讀取頁面內容。",
+    "description": "Content extraction failed"
+  },
+  "error_content_empty": {
+    "message": "抽取後內容為空",
+    "description": "Empty content error"
+  },
+  "error_not_authenticated": {
+    "message": "尚未完成驗證，請先在 Popup 完成 4 碼驗證。",
+    "description": "Not authenticated error"
+  },
+  "error_no_challenge_id": {
+    "message": "Anytype 未回傳 challenge_id",
+    "description": "Missing challenge ID error"
+  },
+  "error_challenge_empty": {
+    "message": "challenge_id 和 code 不可為空",
+    "description": "Challenge params empty error"
+  },
+  "error_no_api_key": {
+    "message": "Anytype 未回傳 api_key",
+    "description": "Missing API key error"
+  },
+  "error_no_space_id": {
+    "message": "無法取得 Anytype space_id",
+    "description": "No space ID error"
+  },
+  "error_create_object_failed": {
+    "message": "建立 object 失敗，回應：$resp$",
+    "description": "Object creation error",
+    "placeholders": {
+      "resp": { "content": "$1" }
+    }
+  },
+  "error_no_spaces": {
+    "message": "Anytype 沒有可用 space",
+    "description": "No spaces error"
+  },
+  "error_missing_new_name": {
+    "message": "缺少 new_name",
+    "description": "Tag update missing name error"
+  },
+  "error_http_status": {
+    "message": "連線異常：HTTP $status$",
+    "description": "HTTP error status",
+    "placeholders": {
+      "status": { "content": "$1" }
+    }
+  },
+  "error_extension_api_unavailable": {
+    "message": "Extension API 不可用",
+    "description": "Extension API error"
+  },
+  "error_challenge_failed": {
+    "message": "challenge 發送失敗",
+    "description": "Auth challenge failed error"
+  },
+  "error_auth_failed": {
+    "message": "驗證失敗",
+    "description": "Auth verification failed error"
+  },
+  "error_unknown": {
+    "message": "未知錯誤",
+    "description": "Fallback unknown error"
+  },
+
+  "options_title": {
+    "message": "Anytype Web Clipper — 設定",
+    "description": "Options page title"
+  },
+  "options_subtitle": {
+    "message": "直連 Anytype 本地 API，無需 Python 中間服務。",
+    "description": "Options page subtitle"
+  },
+  "options_connection_section": {
+    "message": "Anytype 連線狀態",
+    "description": "Options connection section heading"
+  },
+  "btn_test_connection": {
+    "message": "測試連線",
+    "description": "Test connection button"
+  },
+  "options_api_hint": {
+    "message": "Anytype 本地 API：http://127.0.0.1:31009",
+    "description": "Options API URL hint"
+  },
+  "options_api_key_section": {
+    "message": "API Key 管理",
+    "description": "Options API key section heading"
+  },
+  "btn_clear_api_key": {
+    "message": "清除 API Key（重新驗證）",
+    "description": "Clear API key button"
+  },
+  "options_clear_hint": {
+    "message": "清除後，下次開啟 Popup 將重新進行 4 碼驗證流程。",
+    "description": "Clear API key hint"
+  },
+  "options_api_key_saved": {
+    "message": "已儲存 API Key（末 4 碼：...$last4$）",
+    "description": "API key saved status",
+    "placeholders": {
+      "last4": { "content": "$1" }
+    }
+  },
+  "options_api_key_missing": {
+    "message": "尚未設定 API Key，請開啟 Popup 完成驗證。",
+    "description": "API key missing status"
+  },
+  "options_api_key_cleared": {
+    "message": "API Key 已清除。請開啟 Popup 重新驗證。",
+    "description": "API key cleared in options"
+  },
+
+  "options_stats_section": {
+    "message": "使用統計",
+    "description": "Options stats section heading"
+  }
+}

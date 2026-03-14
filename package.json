@@ -1,0 +1,29 @@
+{
+  "name": "anytype-web-clipper",
+  "version": "2.5.0",
+  "description": "Chrome/Edge extension to clip web pages directly to your local Anytype app",
+  "private": true,
+  "scripts": {
+    "test": "mocha --spec lib/*.test.js --spec popup.test.js",
+    "test:e2e": "playwright test --config tests/e2e/playwright.config.js"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "jsdom": "^26.1.0",
+    "mocha": "^11.7.1",
+    "@playwright/test": "^1.52.0"
+  },
+  "keywords": [
+    "anytype",
+    "web-clipper",
+    "chrome-extension",
+    "browser-extension",
+    "knowledge-management"
+  ],
+  "author": "Mars Lee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marskingx/anytype-web-clipper.git"
+  }
+}
