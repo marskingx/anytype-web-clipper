@@ -3,8 +3,11 @@ node_modules/
 Thumbs.db
 *.log
 *.zip
+*.pem
+*.crx
 .env
 dist/
 coverage/
 test-results/
 playwright-report/
+scripts/data/

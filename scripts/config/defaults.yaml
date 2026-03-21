@@ -1,0 +1,36 @@
+server:
+  host: 127.0.0.1
+  port: 8787
+  auth_token: ""
+
+clip:
+  max_html_chars: 3000000
+  request_timeout_sec: 20
+  read_time_wpm: 260
+  include_images: true
+  dedup_ttl_sec: 120
+
+image_backup:
+  enabled: true
+  cache_dir: scripts/anytype_clipper/data/image_cache
+  max_workers: 2
+  timeout_sec: 20
+  retries: 1
+
+anytype:
+  type_key: web_clip
+  type_name: Web Clip
+  type_plural_name: Web Clips
+  type_layout: basic
+  fallback_type_key: page
+  relation_mode: resolve_only
+  relation_targets:
+    author:
+      - human
+      - person
+    media:
+      - media
+      - publisher
+      - organization
+    channel:
+      - channel
